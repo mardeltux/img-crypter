@@ -10,7 +10,7 @@ var imgCrypter = (function () {
   }
 
   function getOffset (x, y, width) {
-    return ((y * (width * 4)) + (x * 4))
+    return ((y * (width * 4)) + (x * 4));
   }
 
   function decimalToBinary(number){
@@ -29,6 +29,7 @@ var imgCrypter = (function () {
       preview.canvas = canvasElement;
       preview.context = preview.canvas.getContext('2d');
     },
+    
     loadCanvas: function (data, cb) {
       var img = new Image();
       img.src = data;
@@ -42,7 +43,7 @@ var imgCrypter = (function () {
         if (typeof this.ready === 'function') {
           this.ready(preview.imageData);
         }
-      }.bind(this)
+      }.bind(this);
     },
     getPixel(x, y) {
       var offset = getOffset(x, y, preview.imageData.width);
@@ -62,13 +63,13 @@ var imgCrypter = (function () {
       preview.context.putImageData(preview.imageData, 0, 0);
     },
     download: function (filename) {
-      downloadImage(filename)
+      downloadImage(filename);
     },
     getDimensions: function(){
       return {
         width: preview.width,
         height: preview.height
-      }
+      };
     },
     stringToBinary: function(str) {
       var result = "";

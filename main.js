@@ -20,7 +20,7 @@
         // so they are usable
         downloadButton.setAttribute('style', 'display: inline');
         msgWrapper.setAttribute('style', 'display: block');
-      }
+      };
     }
   });
 
