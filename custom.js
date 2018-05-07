@@ -37,19 +37,22 @@ function insertMessageAction(message) {
             rojoAArray.pop();
             rojoAArray.push(binaryMessage[indicePalabra]);
             rojo = rojoAArray.join("");
+            rojoDecimal = parseInt(bin2dec(rojo));
 
             verdeAArray = verdeEnBinario.split("");
             verdeAArray.pop();
             verdeAArray.push(binaryMessage[indicePalabra++]);
             verde = verdeAArray.join("");
+            verdeDecimal = parseInt(bin2dec(verde));
 
             azulAArray = azulEnBinario.split("");
             azulAArray.pop();
             azulAArray.push(binaryMessage[indicePalabra++]);
             azul = azulAArray.join("");
-
+            azulDecimal = parseInt(bin2dec(azul));
+            
 //asigno en el pixel especifico, el mensaje ya cifrado en cada atributo
-            imgCrypter.setPixel(fila, columna, {r: rojo, g: verde, b: azul});
+            imgCrypter.setPixel(fila, columna, {r: rojoDecimal, g: verdeDecimalde, b: azulDecimall});
         }
     }
 //    imgCrypter.applyChanges();
@@ -59,6 +62,10 @@ function insertMessageAction(message) {
 
 function dec2bin(i) {
     return (i < 1) ? "" : dec2bin((i - (i % 2)) / 2) + i % 2;
+}
+
+function bin2dec(bin){
+    return parseInt(bin, 2).toString(10);
 }
 
 function getMessageAction() {
