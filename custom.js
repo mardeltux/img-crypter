@@ -52,7 +52,7 @@ function insertMessageAction(message) {
             azulDecimal = parseInt(bin2dec(azul));
             
 //asigno en el pixel especifico, el mensaje ya cifrado en cada atributo
-            imgCrypter.setPixel(fila, columna, {r: rojoDecimal, g: verdeDecimalde, b: azulDecimall});
+            imgCrypter.setPixel(fila, columna, {r: rojoDecimal, g: verdeDecimal, b: azulDecimal});
         }
     }
 //    imgCrypter.applyChanges();
